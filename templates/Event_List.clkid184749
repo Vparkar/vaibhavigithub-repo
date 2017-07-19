@@ -1,0 +1,5760 @@
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")
+$cms.template("Top")
+	#set($upcomingEvents = $util.newArrayList)
+	#foreach($item in $cms.filteredLinks("Event", 1, 200))
+		#foreach($schedule in $item.calendarSchedules)
+				#set($foo = $upcomingEvents.add($schedule))
+		#end
+	#end
+	
+<div class="customerWrapper">
+	#foreach($item in $util.sort($upcomingEvents, "startDate"))
+	
+
+		#set($eventItem = $cms.content($item.contentID))
+	
+		## Title
+			<div class="customerHeadline">
+			$eventItem.title
+
+			</div> <!-- close customerHeadline -->
+
+			<div class="customerBodyWrapper">
+				<div class="customerWide">
+					
+		
+		
+		## Date
+				<span class="meta">
+				$util.date("MMMM dd, yyyy", $util.parseDate($item.startDate,"yyyy-MM-dd"))
+				#if(!$util.inSameDay($util.parseDate($item.startDate,"yyyy-MM-dd"),$util.parseDate($item.endDate,"yyyy-MM-dd")))
+					- $util.date("MMMM dd, yyyy", $util.parseDate($item.endDate,"yyyy-MM-dd"))
+				#end
+
+				#if($item.startTimeFormatted && $item.startTimeFormatted != "")
+					#set($outputString = "($item.startTimeFormatted")
+
+					#if($item.endTimeFormatted && $item.endTimeFormatted != "")
+						#set($outputString = "$outputString - $item.endTimeFormatted)")
+					#else
+						#set($outputString = "$outputString)")
+					#end					
+
+					$outputString
+				#end
+				#if($item.location && $item.location != "")
+					| $item.location
+				#end
+				
+			</span>
+		<br/>
+		## Summary
+			#if($eventItem.summary && $eventItem.summary != "")
+				<p>$eventItem.summary</p>
+			#elseif($eventItem.body && $eventItem.body != "")
+				#set($numPara = 2)
+				#set($inputString = $eventItem.body)
+				$cms.template("Get Shortened String")
+				$!outputString
+			#end
+			<p>
+				<a class="more" href="$eventItem.url"  border="0"><img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;More</a>
+			</p>
+			<p><a href="http://$cms.envHost$cms.domain/templates/add_to_calendar.ics?contentid=${eventItem.id}">Add to Calendar</a></p>
+	
+				</div> <!-- customerBodyWrapper -->
+			</div> <!-- customerBodyWrapper -->
+		
+		## Divider
+			<div class="customerDivider">
+			</div> <!-- customerDivider -->
+	#end	
+</div>
+$cms.template("Bottom")

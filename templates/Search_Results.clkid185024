@@ -1,0 +1,4420 @@
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")
+$cms.template("Setup")
+#set($isEditable = true)
+
+#if($req.param("keywords") && $req.param("keywords") != "")
+	#set($tempKeywords = $req.param("keywords"))
+	#set($tempCatSetArray = $util.newArrayList)
+	#set($tempCatIDArray = $util.newArrayList)
+		 
+	#foreach($catObj in $cms.getCategorySet(6282).getCategories())
+		#if($catObj.name.toLowerCase().equals($tempKeywords.toLowerCase()))
+			#set($foo = $tempCatSetArray.add(6282))
+			#set($foo = $tempCatIDArray.add($catObj.id))			
+		#end
+	#end
+	
+	#set($keywordResults = $util.newArrayList)
+	#if($tempCatSetArray.size() > 0)
+		#set($myLinks = $cms.newLinks)
+		$myLinks.addContentType("Keywords")
+		$myLinks.setDestination("$topLevel.path/keywords")
+		$myLinks.setCategorization($cms.getCategorization($tempCatSetArray, $tempCatIDArray))
+		#set($keywordResults = $myLinks.links(1, 10))
+	#end
+	
+	#set($gsraKeywords = $req.param("keywords"))
+	#set($gsraCheckKeyword = true)
+	#set($gsraSearchIncludeArray = ["Blog Post", "Event", "Products", "Bio", "White Paper", "Press Release", "General Page"])
+	#set($gsraReturnContentItems = true)
+	#set($gsraSearchWSSHash = $util.newHashMap)
+	#set($gsraSearchSynonyms = true)
+	#set($foo = $gsraWSSHash.put($topLevel.path, false))
+	$cms.template("Get Search Results Array")
+	#set($searchResults = $gsraOutputArray)
+#end
+
+#if($gsraKeywords && $gsraKeywords != "")
+	#set($searchHeaderText = "$util.text($gsraKeywords)")
+#else
+	#set($found = false)
+	#foreach($gsraParam in $req.params)
+		#if(!$found && $math.newInt($gsraParam) > 0 && $req.intParam($gsraParam) > 0)
+			#set($found = true)
+			#set($gsraFoo = $gsraCatSetArray.add($math.newInt($gsraParam)))
+			#set($gsraFoo = $gsraCatIDArray.add($req.intParam($gsraParam)))
+			#set($searchHeaderText = "$cms.getCategorySet($math.newInt($gsraParam)).getCategory($req.intParam($gsraParam)).name")
+		#end
+	#end
+#end
+
+#set($sectionTitle = "Search Results For: $searchHeaderText")
+
+$cms.template("Top")
+<div id="newsarticle">
+	<div class="bodyCopy">
+		#if($searchTracked)
+			WMA: "$gsraKeywords" tracked to visitsearch table. $wma.getSearchCount() searches for this visitor<br>
+		#end
+		#if((!$searchResults || $searchResults.size() == 0) && (!$keywordResults || $keywordResults.size() == 0))
+			<h4>No results were found</h4>
+		#else
+			#set($keywordResultsIds = $util.newArrayList)
+			#if($keywordResults && $keywordResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $keywordResults)
+					#set($link = false)
+					#set($summary = false)
+					#set($mainItem = false)
+					#set($title = false)
+					#set($linkTarget = false)
+
+					#if($item.overrideURL && $item.overrideURL != "")
+						#set($link = $item.overrideURL)
+
+					#else
+						#set($gibInputIB = $item.internalItem)
+						#set($gibMaxItems = 1)
+						$cms.template("Get IB Items")
+						#foreach($subItem in $gibOutputArray)
+							#set($mainItem = $subItem)
+						#end
+
+						#if($mainItem.link && $mainItem.link != "")
+							#set($link = $mainItem.link)
+						#elseif($mainItem.url && $mainItem.url != "")
+							#set($link = $mainItem.url)
+						#end
+					#end
+
+					#if($link)
+						#if($item.overrideTitle && $item.overrideTitle != "")
+							#set($title = $item.overrideTitle)
+						#elseif($mainItem.title && $mainItem.title != "")
+							#set($title = $mainItem.title)
+						#end
+
+						#if($title)
+							#set($foo = $keywordResultsIds.add($mainItem.id.toString()))
+							
+							#if($item.overrideSummary && $item.overrideSummary != "")
+								#set($summary = $item.overrideSummary)
+							#elseif($mainItem.summary && $mainItem.summary != "")
+								#set($summary = $mainItem.summary)
+							#elseif($mainItem.body && $mainItem.body != "")	
+								#set($summary = $util.text($mainItem.body))
+							#end
+
+							#if($item.newWindow)
+								#set($linkTarget = "_blank")
+							#else
+								#set($linkTarget = "")
+							#end
+
+							#if(!$found)
+								#set($found = true)
+								<h4 class="featured">Featured Results</h4>
+							#else
+								<div class="customerDivider"></div>
+							#end
+							
+							<div class="customerWrapper featured">
+								<div class="calloutText featured">
+									$title
+							
+									#if($item.price && $item.price != "")
+										<span class="indexPrice" featured>$item.price</span>
+									#end
+								</div>
+						
+								<div class="customerBodyWrapper">
+									<div class="customerWide">
+										#if($summary && $summary != "")
+											<p featured>$summary</p>
+										#end
+											
+										<p featured><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$link" target="$linkTarget">More</a></p>
+									</div>
+								</div>
+							</div>
+						#end
+					#end
+				#end
+			#end
+	
+			#if($searchResults.size() > 0)
+				#set($found = false)
+				#foreach($item in $searchResults)
+					#if(!$keywordResultsIds.contains($item.id.toString()))
+						#if(!$found)
+							#set($found = true)
+							<h4>Keywords Results</h4>
+							$cms.template("Search Pagination")
+						#else
+							<div class="customerDivider"></div>
+						#end
+		
+						<div class="customerWrapper">
+							<div class="calloutText">
+								$cms.edit($item, "title")
+								#if($item.price && $item.price != "")
+									<span class="indexPrice">$item.price</span>
+								#end
+							</div>
+			
+							<div class="customerBodyWrapper">
+								<div class="customerWide">
+									#if($item.summary && $item.summary != "")
+										$cms.edit($item, "summary")
+									#elseif($item.body && $item.body != "")
+										#set($numPara = 2)
+										#set($inputString = $item.body)
+										$cms.template("Get Shortened String")
+										$!outputString
+									#end
+
+									#set($tags = $util.newArrayList)
+									#foreach($subStr in $string.split($item.metadata, ","))
+										#set($foo = $tags.add($subStr.toLowerCase().trim()))
+									#end		
+					
+									#set($topics = $util.newArrayList)
+									#foreach($catObj in $item.getCategorization().getCategories(9509))
+										#if($catObj.name != "Uncategorized")
+											#set($foo = $topics.add($catObj))
+										#end
+									#end		
+														
+									<p><img class="redArrow" src="$leadArrowURL" alt="" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$wma.getSearchResultUrl($item.url,$gsraKeywords)">More</a>
+									</p>
+									#if($topics.size() > 0)
+										<span class="tag-label">Topics: </span>
+					
+										#foreach($catObj in $topics)
+											<a href="$topLevel.path/search?topics=y&9509=$catObj.id" class="tags">$catObj.name</a>
+										#end
+					
+										<br/>
+									#end
+					
+					
+									#if($tags.size() > 0)
+										<span class="tag-label">Tags: </span>
+					
+										#foreach($tag in $tags)
+											 <a href="$topLevel.path/search?field=metadata&keywords=$util.encode.url($tag)" class="tags">$tag</a>
+										#end
+					
+										<br/>
+									#end
+								</div>
+							</div>
+						</div>
+					#end
+				#end
+	
+			 	$cms.template("Search Pagination")
+			#end
+		#end
+	</div>
+</div>
+		
+$cms.template("Bottom")

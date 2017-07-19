@@ -1,0 +1,2480 @@
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 
+<html>
+<head>
+<title>Decimal Value Test</title>
+<head>
+<body>
+<h4>Current Value: $wma.getProfile().getField("decimal").toString()</h4>
+#if($subscription.error)
+<b> Error Info : $subscription.error</b>
+<table>
+    <tr>
+        <td>errorCode: $subscription.errorCode </td>
+    </tr>
+    <tr>
+        <td>errorDetails: $subscription.errorDetails</td>
+    </tr>
+</table>
+#end
+    <form name="decimalValueForm" method="post" action="/s">
+        <input type="hidden" name="action" value="submitProfile" />
+        <table border="1">
+        <input type="hidden" name="errorDestId" value="$cms.websiteSection.id" />
+	#if($cms.content)
+        <input type="hidden" name="errorContentId" value="$cms.content" />
+	#end
+	#set($field = $wma.getProfileField("decimal"))
+	$field.label <input type="text" name="$field.tag" value="" />
+	<input type="hidden" name="rurl" value="$cms.websiteSection.url" />
+	<input type="submit"/>
+    </form>
+</body>
+</html> 

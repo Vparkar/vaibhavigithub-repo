@@ -1,0 +1,5280 @@
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 20)
+#end  
+
+#foreach($item in $cms.filteredLinks("Products", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">
+   <div id="visit_count">Visit Count (\$wma.visitCount): $wma.visitCount</div><br>
+		<a href="$item.url">$cms.edit($item, "title")</a>
+	 	#if($item.price && $item.price != "")
+			<span class="indexPrice">$item.price</span>
+		#end
+		</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				#if($wma.getContentAttributes($item.id))
+					<br><b>WMA Info</b><br>
+					#set($wmaInfo = $wma.getContentAttributes($item.id))
+					#if($wmaInfo.profileLevel) 
+						<b>Gated Content:</b> "$wmaInfo.profileLevel"<br>
+					#end
+					#if($!wmaInfo.leadScoreContribution > 0)
+						<b>Lead Score:</b> $!wmaInfo.leadScoreContribution<br>
+					#end
+					#if($wmaInfo.interestDefinitions.size() > 0)
+						<b>Interests:</b> #foreach($interest in $wmaInfo.interestDefinitions) $!interest.name #if($wmaInfo.interestDefinitions.size() > 1 && $wmaInfo.interestDefinitions.size() != $velocityCount), #end #end<br>
+					#end
+					#if($wmaInfo.campaignIds.size() > 0)
+						<b>Campaigns:</b> #foreach($campaign in $wmaInfo.campaignIds) $!campaign #if($wmaInfo.campaignIds.size() > 1 && $wmaInfo.campaignIds.size() != $velocityCount), #end #end<br>
+					#end
+					#if(!$wmaInfo.profileLevel && $wmaInfo.leadScoreContribution == 0 && $wmaInfo.interestDefinitions.size() == 0 && $wmaInfo.campaignIds.size() == 0)
+						No WMA info associated to this content item.
+					#end
+					#set($wmaInfo = "")
+				#end
+				<p>
+				<img class="redArrow" src="$leadArrowURL" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")

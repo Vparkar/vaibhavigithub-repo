@@ -1,0 +1,6160 @@
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+
+$cms.template("Top")
+
+<div class="customerBodyWrapper">
+
+	<div class="customerWide">
+    <h4> Account Data </h4>
+
+ #foreach($act in $wma.getAccounts())
+	<br><br>
+	<b>Account: $act.getName() .. $act.getDescription() </b><br>
+	Account Fields: <br><br>
+	#set($actObj = $wma.getAccountData($act.getAccountId()))
+	
+	#foreach($Valobj in $actObj.getFields())
+		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType
+		
+		<br>
+	#end
+#end
+
+
+	#foreach($account in $wma.getAccounts()) 
+		$account.name - ($account.accountId)<br>
+		#set($accObj = $wma.getAccountData($account.accountId))
+		<table border=1>
+		#foreach($field in $accObj.getFields())
+		$field.label<br>
+		<tr>
+		<td rowspan="7">$field.label</td>
+		<td><b>getDataType()</b></td>
+		<td>$!field.getDataType()</td>
+		</tr>
+		<tr>
+		<td><b>getDefaultValue()</b></td>
+		<td>#if($field.getDefaultValue()) $!field.getDefaultValue()  #else None #end</td>
+		</tr>
+		<tr>
+		<td><b>getFieldType()</b></td>
+		<td>$!field.getFieldType()</td>
+		</tr>
+		<tr>
+		<td><b>getLabel()</b></td>
+		<td>$!field.getLabel()</td>
+		</tr>
+		<tr>
+		<td><b>getLeadScoreContribution()</b></td>
+		<td>$!field.getLeadScoreContribution()</td>
+		</tr>
+		<tr>
+		<td><b>getProgressiveProfileLevel()</b></td>
+		<td>$!field.getProgressiveProfileLevel()</td>
+		</tr>
+		<tr>
+		<td><b>getTag()</b></td>
+		<td>$!field.getTag()</td>
+		</tr>
+		#end<br>
+		</table>
+	#end
+	
+	
+	
+	<h4> Account Data </h4>  #foreach($act in $wma.getAccounts()) 	<br><br> 	Account: $act.getName() .. $act.getDescription() <br> 	Account Fields: <br><br> 	#set($actObj = $wma.getAccountData($act.getAccountId())) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() .. $Valobj.fieldType 		 		<br> 	#end #end <br><br> <h4> Data abt Account Associated with Visitor </h4> <br> 	#set($actObj = $wma.getAccountData()) 	 	#foreach($Valobj in $actObj.getFields()) 		$Valobj.getLabel()  ..   $Valobj.getValue() 		<br> 	#end
+	</div>
+
+</div>
+
+$cms.template("Bottom")
+
+
+
+
+
+
+
+
+

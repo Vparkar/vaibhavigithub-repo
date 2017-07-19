@@ -1,0 +1,3200 @@
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")
+#set($isEditable = true)
+
+$cms.template("Top")
+
+## Set numToPull
+#if($req.param("showAll") == "y")
+	#set($numToPull = 1000)
+#else	
+	#set($numToPull = 10)
+#end  
+
+#foreach($item in $cms.filteredLinks("Press Release", 1, $numToPull))
+	<div class="customerWrapper">
+	
+	## Title
+	<div class="calloutText">$cms.edit($item, "title")</div>
+		
+	## Summary
+		<div class="customerBodyWrapper">
+			<div class="customerWide">
+				#if($item.summary && $item.summary != "")
+					$cms.edit($item, "summary")
+				#elseif($item.body && $item.body != "")
+					#set($numPara = 2)
+					#set($inputString = $item.body)
+					$cms.template("Get Shortened String")
+					$!outputString
+				#end
+				<p>
+				<img class="redArrow" src="$cms.media("red_arrow.gif", "designimages").url" alt="" width="6" height="9" border="0" align="left" />&nbsp;&nbsp;&nbsp;<a class="more" href="$item.url">More</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	## Divider
+	<div class="customerDivider"></div>
+#end
+
+$cms.template("Bottom")

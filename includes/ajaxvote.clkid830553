@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var count = 0;
+		var countDiv = document.getElementById("count");
+		var showDiv = document.getElementById("show");
+	
+		$.get("http://www.ktrh.com/cc-common/polling_tool/insertPoll.php", { poll_id: "132949", redirect:"/pages/topdog.html", optionID:"644627" },function(data){ alert("Data Loaded:" + data); count = count + 1; countDiv.innerHTML = count; showDiv.innerHTML = data; });
+	});
+</script>
+</head>
+<body>
+<div id="count"></div>
+<br/><br/>
+<div id="show"></div>
+</body></html>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var count = 0;
+		var countDiv = document.getElementById("count");
+		var showDiv = document.getElementById("show");
+	
+		$.get("http://www.ktrh.com/cc-common/polling_tool/insertPoll.php", { poll_id: "132949", redirect:"/pages/topdog.html", optionID:"644627" },function(data){ alert("Data Loaded:" + data); count = count + 1; countDiv.innerHTML = count; showDiv.innerHTML = data; });
+	});
+</script>
+</head>
+<body>
+<div id="count"></div>
+<br/><br/>
+<div id="show"></div>
+</body></html>

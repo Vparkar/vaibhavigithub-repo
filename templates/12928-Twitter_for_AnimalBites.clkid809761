@@ -1,0 +1,69 @@
+## user vars
+#set( $consumerKey = 'KZvlJ1aADPtsvqVfCFCL4JYgd' )##
+#set( $consumerSecret = 'OJIwbRqQlaEqWzwNJYVUu6w1YPtTX3o8PNwxyl6hldzIlTKMIQ' )##
+#set( $accessToken = '702980421517049856-hchFC6JNFdAJ9hvYQpVgscTqRr61QMO' )##
+#set( $accessTokenSecret = '4VI21uQ28bSBKjOEXgYKmo3so8kfOdn1oSlc2d99HHddx' )##
+## normal vars
+#set( $qq = '"' )##
+#set( $timestamp = $util.now.getTime() )##
+#set( $timeLength = $math.subtract( $string.length( $timestamp ), 3 ) )##
+#set( $timestamp = ${string.substring( $timestamp, 0, $timeLength )} )##
+#set( $nonce = $string.substring( $util.hmacSha256AsHex( "${timestamp}", 'abites' ), 0, 32 ) )##
+## api variables
+#set( $apiURL = 'https://api.twitter.com/1.1/statuses/user_timeline.json' )##
+#set( $apiMethod = 'GET' )##
+## call feed
+#set( $twitterFeed = $httpClient.newHttpClient() )##
+${twitterFeed.setUrl( $apiURL )}##
+${twitterFeed.setRequestType( $apiMethod )}##
+## generate signature params
+#set( $paramHashMap = $util.newHashMap )##
+${paramHashMap.put( 'oauth_consumer_key', $consumerKey )}##
+${paramHashMap.put( 'oauth_nonce', $nonce )}##
+${paramHashMap.put( 'oauth_signature_method', 'HMAC-SHA1' )}##
+${paramHashMap.put( 'oauth_timestamp', $timestamp )}##
+${paramHashMap.put( 'oauth_token', $accessToken )}##
+${paramHashMap.put( 'oauth_version', '1.0' )}##
+## passed vars, sanitize and add to request
+#foreach( $key in $req.params )##
+#*	*##set( $value = $string.trim( $req.param( $key ) ) )##
+#*	*##set( $key = $string.trim( $key ) )##
+#*	*##if( $key != '' && $value != '' )##
+#*		*#${paramHashMap.put( $key, $value )}##
+#*		*#${twitterFeed.addRequestParameter( $key, $value )}##
+#*	*##end##
+#end##
+## generate signing string
+#set( $signingString = '' )##
+#foreach( $key in $util.sort( $paramHashMap.keySet, 'toString' ) )##
+#*	*##set( $value = $paramHashMap.get( $key )  )##
+#*	*##set( $value = $util.encode.url( $value ) )##
+#*	*##set( $signingString = "${signingString}${key}=${value}" )##
+#*	*##if( $velocityCount < $paramHashMap.size )##
+#*		*##set( $signingString = "${signingString}&" )##
+#*	*##end##
+#end##
+#set( $signingString = "${apiMethod}&${util.encode.url( $apiURL )}&${util.encode.url( $signingString )}" )##
+## generate signing key
+#set( $signingKey = "${util.encode.url( $consumerSecret )}&${util.encode.url( $accessTokenSecret )}" )##
+## generate signature
+${paramHashMap.put( 'oauth_signature', $util.hmacSha1AsBase64( $signingString, $signingKey ) )}##
+## build auth token
+#set( $authToken = 'OAuth' )##
+#foreach( $key in $util.sort( $paramHashMap.keySet, 'toString' ) )##
+#*	*##if( ${string.startsWith( $key, 'oauth_' )} )##
+#*		*##set( $value = $paramHashMap.get( $key )  )##
+#*		*##set( $value = $util.encode.url( $value ) )##
+#*		*##set( $authToken = "${authToken} ${key}=${qq}${value}${qq}" )##
+#*		*##if( $velocityCount < $paramHashMap.size )##
+#*			*##set( $authToken = "${authToken}," )##
+#*		*##end##
+#*	*##end##
+#end##
+## finish feed
+${twitterFeed.setTTL( 60 )}##
+${twitterFeed.addRequestHeader( 'Authorization', $authToken )}##
+## get data
+#set( $twitterData = $twitterFeed.execute() )##
+## output data
+${twitterData.responseString}##

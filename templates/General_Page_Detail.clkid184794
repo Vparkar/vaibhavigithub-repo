@@ -1,0 +1,3600 @@
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end
+#set($isEditable = true)
+#set($sectionTitle = "")
+#set($content = $cms.content)
+
+#if(!$content || $content.typeName != "General Page")
+	#foreach($item in $cms.filteredLinks("General Page", 1, 1))
+		#set($content = $item)
+	#end
+#end
+
+#if(!$content.hideBranding)
+	$cms.template("Top")
+#end
+
+<div class="headline">$cms.edit($content, "title")</div>
+
+<div id="newsarticle">
+	$cms.template("Networking Tools")
+	
+	<div class="contentWrapper">
+		<p>$cms.translate($content.body.replaceAll("&quot;", "\""))</p>
+	</div>
+
+	#set($trends = $util.newArrayList)
+		#foreach($catObj in $content.getCategorization().getCategories(7834))
+			#if($catObj.name != "Uncategorized")
+				#set($foo = $trends.add($catObj))
+			#end
+		#end
+		
+		#if($trends.size() > 0)
+			<br/>
+			<span class="tag-label">Trends: </span>
+
+			#foreach($catObj in $trends)
+				<span class="tags">$catObj.name</span>
+			#end
+			<br/><br/>
+		#end
+	
+</div>
+
+#if(!$content.hideBranding)
+	$cms.template("Bottom")
+#end

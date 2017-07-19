@@ -1,0 +1,3120 @@
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
+#if($isSubscribeResponse)
+Thank you for subscribing to $mailinglist.name.  
+	
+If you did not authorize this registration, someone has mistakenly registered using your e-mail address. We regret the inconvenience. To unsubscribe, send an email to
+${mailinglist.listemailname}-unsubscribe@nl.clickability.com.
+
+#elseif($isUnsubscribeResponse)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+
+#elseif($isSubscribeConfirmationRequest)
+Thank you for subscribing to $mailinglist.name. 
+
+Please note: Your subscription to this newsletter will not begin until you confirm your request by replying to this email
+
+
+#elseif($isUnsubscribeConfirmationRequest)
+Your email address, $subscriber.email, has been removed from the $mailinglist.name mailing list.  
+
+#elseif($isSubscribeError)
+
+You requested to add $senderEmail to the $mailinglist.name mailing list.  This address was already a subscriber to the list.
+
+If you have been having trouble receiving list messages, or if you need further assistance,
+please send email to ${mailinglist.listemailname}-reply@nl.clickability.com. 
+
+	
+#elseif($isUnsubscribeError)
+We were unable to carry out your request to unsubscribe because the address you submitted could not be found on the $mailinglist.name mailing list. 
+
+E-mail address: $senderEmail
+
+If you continue to receive the $mailinglist.name newsletter, you may be subscribed under a different address. 
+
+If you require further assistance, please send an email to: 
+admin@jsonline.com
+
+
+#end
